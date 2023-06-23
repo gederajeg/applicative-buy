@@ -24,8 +24,19 @@ author:
       - number: 2
         name: Universitas Udayana
     
-format: html
+format: 
+  html:
+    code-fold: show
+    code-block-border-left: "#31BAE9"
+    code-block-bg: "#F8F9F9"
+    citations-hover: true
+    footnotes-hover: true
+    code-tools: 
+      source: true
+      caption: "Source code"
 editor: visual
+google-scholar: true
+appendix-cite-as: display
 bibliography: "../zotero.bib"
 csl: "../unified-style-sheet-for-linguistics.csl"
 ---
@@ -338,7 +349,7 @@ pmultinom <- EMT::multinomial.test(observed = synt_trans_membelikan$n, prob = pr
 # p-value = 0
 ```
 
-```{r membelikan-synvalence-visualisation, fig.asp=0.8, dpi=300, fig.width=7, fig.cap="Syntactic transitivity of *membelikan*"}
+```{r membelikan-synvalence-visualisation, fig.asp=0.8, dpi=300, fig.width=7, fig.cap="Syntactic transitivity of *membelikan*", eval = FALSE, include = FALSE, echo = FALSE}
 #| label: fig-membelikan-synvalence
 synt_trans_membelikan %>% 
   ggplot(aes(x = syntactic_transitivity, 
@@ -385,7 +396,54 @@ synt_trans_membelikan %>%
   #          label = pull(filter(synt_trans_membelikan_pairwise_binom, group1 == "ditransitive", group2 == "intransitive"), p.adjt))
 ```
 
-```{r membelikan-cxntype-synvalence-visualisation, fig.asp=0.8, dpi=300, fig.width=7, fig.cap="Syntactic transitivity and construction types of *membelikan*"}
+```{r membelikan-synvalence-visualisation-raw-freq, fig.asp=0.8, dpi=300, fig.width=7, fig.cap="Syntactic transitivity of *membelikan*"}
+#| label: fig-membelikan-synvalence-raw
+synt_trans_membelikan %>% 
+  ggplot(aes(x = syntactic_transitivity, 
+             y = n, 
+             fill = syntactic_transitivity)) + 
+  geom_col(position = position_dodge(.9), colour = "gray50") +
+  geom_text(aes(label = paste("n=", n, sep = "")), 
+            position = position_dodge(.9),
+            vjust = c(10, 3, -.5),
+            hjust = c(.5, .5, .5),
+            size = c(8, 8, 7.5),
+            colour = c("white", "white", "black")) +
+  theme_bw() +
+  scale_fill_manual(values = c("limegreen", "royalblue1", "gold")) +
+  labs(y = "Raw frequency",
+       fill = NULL,
+       x = NULL) +
+  theme(legend.position = "none",
+        axis.title.y = element_text(size = 20),
+        axis.text.y = element_text(size = 11.5),
+        axis.text.x = element_text(size = 22)) # +
+  #geom_errorbar(aes(ymin = conf_low, ymax = conf_high), 
+  #              width = .2, position = position_dodge(.9)) # +
+  # ylim(NA, 1) +
+  # geom_segment(x = 1.3, xend = 2, y = 0.84, yend = 0.84) +
+  # geom_segment(x = 1.3, xend = 1.3, y = 0.84, yend = 0.82) +
+  # geom_segment(x = 2, xend = 2, y = 0.84, yend = 0.82) +
+  # annotate("text",
+  #          x = 1.7, y = 0.88,
+  #          label = pull(filter(synt_trans_membelikan_pairwise_binom, group1 == "monotransitive", group2 == "ditransitive"), p.adjt)) +
+  # 
+  # geom_segment(x = 1, xend = 3, y = 0.96, yend = 0.96) +
+  # geom_segment(x = 1, xend = 1, y = 0.96, yend = 0.94) +
+  # geom_segment(x = 3, xend = 3, y = 0.96, yend = 0.94) +
+  # annotate("text",
+  #          x = 2, y = 1,
+  #          label = pull(filter(synt_trans_membelikan_pairwise_binom, group1 == "monotransitive", group2 == "intransitive"), p.adjt)) +
+  # 
+  # geom_segment(x = 2, xend = 3, y = 0.38, yend = 0.38) +
+  # geom_segment(x = 2, xend = 2, y = 0.38, yend = 0.36) +
+  # geom_segment(x = 3, xend = 3, y = 0.38, yend = 0.36) +
+  # annotate("text",
+  #          x = 2.5, y = 0.42,
+  #          label = pull(filter(synt_trans_membelikan_pairwise_binom, group1 == "ditransitive", group2 == "intransitive"), p.adjt))
+```
+
+```{r membelikan-cxntype-synvalence-visualisation, fig.asp=0.8, dpi=300, fig.width=7, fig.cap="Syntactic transitivity and construction types of *membelikan*", eval = FALSE, include = FALSE, echo = FALSE}
 #| label: fig-membelikan-cxn-synvalence
 
 
@@ -429,6 +487,59 @@ cxn_type_synt_trans_membelikan %>%
        x = NULL) +
   geom_errorbar(aes(ymin = conf_low, ymax = conf_high), 
                 width = .2, position = position_dodge(.9)) +
+  theme(axis.text.x = element_text(size = 22),
+        axis.title.y = element_text(size = 20),
+        axis.text.y = element_text(size = 11.5),
+        legend.text = element_text(size = 14),
+        legend.title = element_text(size = 18),
+        legend.position = "top")
+
+```
+
+```{r membelikan-cxntype-synvalence-visualisation-raw, fig.asp=0.8, dpi=300, fig.width=7, fig.cap="Syntactic transitivity and construction types of *membelikan*"}
+#| label: fig-membelikan-cxn-synvalence-raw
+
+
+# get the base, "blue" ggplot2 colour using `scales` package
+ggblue <- scales::hue_pal()(3)[3]
+
+### 2.1 data preparation and binomial test for CI =====
+cxn_type_synt_trans_membelikan <- cxn_type_membelikan %>% 
+  filter(schema != "intransitive") %>% 
+  mutate(schema = str_replace(schema, "theme", "GOODS"), 
+         schema = str_replace(schema, "recipient", "BEN/REC"), 
+         schema = str_replace(schema, "_cxn$", ""), 
+         syntactic_transitivity = factor(syntactic_transitivity, 
+                                         levels = c("monotransitive", "ditransitive")), 
+         schema = factor(schema, levels = c("GOODS_obj", "BEN/REC_obj")),
+         perc_schema = round(n/n_transitivity * 100, 2),
+         binomtest = pmap(list(x = n, n = n_transitivity), 
+                          binom.test, conf.level = 0.99), 
+         conf_low = map_dbl(binomtest, list("conf.int", 1)), 
+         conf_high = map_dbl(binomtest, list("conf.int", 2)), 
+         estimate = map_dbl(binomtest, "estimate"), 
+         pval = map_dbl(binomtest, "p.value")
+         )
+
+### 2.2 visualisation proper =======
+cxn_type_synt_trans_membelikan %>% 
+  ggplot(aes(x = syntactic_transitivity, 
+           y = n, 
+           fill = schema)) + 
+  geom_col(position = position_dodge(.9), colour = "gray50") +
+  geom_text(aes(label = paste("n=", n, sep = "")), 
+            position = position_dodge(.9),
+            vjust = c(9, -.35, 3, -.35),
+            hjust = c(.5, .5, .5, .5),
+            size = c(8, 7, 8, 7),
+            colour = c("white", "black", "white", "black")) +
+  theme_bw() +
+  scale_fill_manual(values = c(ggred, ggblue, ggblue, ggred, ggblue)) +
+  labs(y = "Raw frequency",
+       fill = NULL,
+       x = NULL) +
+  # geom_errorbar(aes(ymin = conf_low, ymax = conf_high), 
+  #              width = .2, position = position_dodge(.9)) +
   theme(axis.text.x = element_text(size = 22),
         axis.title.y = element_text(size = 20),
         axis.text.y = element_text(size = 11.5),
