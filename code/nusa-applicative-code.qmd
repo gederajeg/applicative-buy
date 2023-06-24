@@ -776,13 +776,13 @@ cxn_type_dibelikan1 %>%
   geom_segment(x = 3, xend = 3, y = 0.9, yend = 0.86) +
   annotate("text",
            x = 2, y = 0.94,
-           label = cxn_type_dibelikan_binom_pairwise[2,][["p.adjt"]]) +
+           label = cxn_type_dibelikan_binom_pairwise[2,][["p.adj.signif"]]) +
   
   geom_segment(x = 2, xend = 3, y = 0.58, yend = 0.58) +
   geom_segment(x = 2, xend = 2, y = 0.58, yend = 0.54) +
   geom_segment(x = 3, xend = 3, y = 0.58, yend = 0.54) +
   annotate("text",
            x = 2.5, y = 0.62,
-           label = cxn_type_dibelikan_binom_pairwise[1,][["p.adjt"]])
+           label = cxn_type_dibelikan_binom_pairwise[1,][["p.adj.signif"]])
 ```
 
