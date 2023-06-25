@@ -593,8 +593,13 @@ goods_obj_membeli <- cxn_type_membeli %>% slice_max(n = 1, order_by = n) %>% pul
 chisq.test(c(goods_obj_membelikan, goods_obj_membeli))
 ```
 
+```{r monotransitive-membelikan-clause-type}
+membelikan_theme_object_clause_type <- count(filter(df_membelikan, syntactic_transitivity == "monotransitive", schema == "theme_obj_cxn"), schema, clause_type)
+```
 
 
+
+Moreover, the occurrence of *membelikan* in the Monotransitive, THEME-Object Construction can be equally likely in the main (N=`r pull(filter(membelikan_theme_object_clause_type, clause_type == "main"), n)`) and subordinate (N=`r pull(filter(membelikan_theme_object_clause_type, clause_type == "subordinate"), n)`) clauses without (statistically) significant difference (*p*~Binomial~=`r round(binom.test(membelikan_theme_object_clause_type$n)$p.value, 2)`).
 
 
 ## Co-referentiality of [Beneficiary]{.smallcaps} in control construction
