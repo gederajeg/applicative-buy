@@ -69,8 +69,9 @@ The total size (in word-tokens) for the corpus is `r prettyNum(sum(corpussize$to
 
 Below is the code to read-in the spreadsheet containing the annotated concordance data for [beli]{.smallcaps} (*membeli*, _membeli**kan**_, *dibeli*, and _dibeli**kan**_).
 
-```{r load-concordance-BELI}
-mydat <- read_xlsx("../data/BELI-main.xlsx")
+```{r load-concordance-BELI, message = FALSE, warning = FALSE}
+# mydat <- read_xlsx("../data/BELI-main.xlsx")
+mydat <- read_csv2("../data/BELI-main.csv")
 df_membelikan <- mydat %>% 
   filter(node == "membelikan")
 df_membeli <- mydat %>% 
@@ -79,7 +80,25 @@ df_dibeli <- mydat %>%
   filter(node == "dibeli")
 df_dibelikan <- mydat %>% 
   filter(node == "dibelikan")
+mydat_clause_type <- mydat |> 
+  count(clause_type, sort = TRUE) |> 
+  mutate(perc = n/sum(n) * 100,
+         perc = round(perc, 1))
+mydat_clause_type_binom <- binom.test(mydat_clause_type$n)
+# 	Exact binomial test
+# 
+# data:  mydat_clause_type$n
+# number of successes = 254, number of trials = 400, p-value = 7.382e-08
+# alternative hypothesis: true probability of success is not equal to 0.5
+# 95 percent confidence interval:
+#  0.5857092 0.6822768
+# sample estimates:
+# probability of success 
+#                  0.635
+
 ```
+
+The sample comprises of `r filter(mydat_clause_type, clause_type == "subordinate")[["n"]]` tokens (`r filter(mydat_clause_type, clause_type == "subordinate")[["perc"]]`%) of `r filter(mydat_clause_type, clause_type == "subordinate")[["clause_type"]]` clauses and `r filter(mydat_clause_type, clause_type == "main")[["n"]]` tokens (`r filter(mydat_clause_type, clause_type == "main")[["perc"]]`%) of `r filter(mydat_clause_type, clause_type == "main")[["clause_type"]]` clauses (*p*~Binomial~ < 0.0001).
 
 
 # Analyses for *membeli*
@@ -185,6 +204,21 @@ cxn_type_membeli %>%
 
 The results in @tbl-membeli-proptest and @fig-membeli-cxntype show that the Monotransitive, [Goods]{.smallcaps}-as-object construction is unsurprisingly and highly significantly the predominant argument realisation pattern for the base *membeli*.
 
+The code below shows the count for the distribution of the intransitive *membeli* in main vs subordinate clauses (question raised by Reviewer A).
+
+```{r membeli-clause-type}
+intransitive_membeli_clause_type <- df_membeli |> 
+  filter(schema == "intransitive") |> 
+  count(clause_type, sort = TRUE) |> 
+  mutate(percentage = n/sum(n) * 100)
+
+intransitive_membeli_clause_type_binom <- binom.test(intransitive_membeli_clause_type$n)
+intransitive_membeli_clause_type_binom_pval <- intransitive_membeli_clause_type_binom$p.value
+
+intransitive_membeli_clause_type
+```
+
+The intransitive *membeli* is significantly more frequent in the subordinate clause (N=`r filter(intransitive_membeli_clause_type, clause_type=="subordinate")[["n"]]`) than in the main clause (N=`r filter(intransitive_membeli_clause_type, clause_type=="main")[["n"]]`) (*p*~Binomial~ < 0.05).
 
 # Analyses for *dibeli*
 
