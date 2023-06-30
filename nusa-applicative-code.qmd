@@ -832,3 +832,4 @@ cxn_type_dibelikan1 %>%
            x = 2.5, y = 0.62,
            label = cxn_type_dibelikan_binom_pairwise[1,][["p.adj.signif"]])
 ```
+
