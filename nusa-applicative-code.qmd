@@ -34,6 +34,9 @@ format:
     citations-hover: true
     footnotes-hover: true
     number-sections: true
+    toc: true
+    toc-location: left
+    toc-expand: true
     code-tools: 
       source: true
       caption: "Source code"
@@ -204,6 +207,10 @@ cxn_type_membeli %>%
 
 The results in @tbl-membeli-proptest and @fig-membeli-cxntype show that the Monotransitive, [Goods]{.smallcaps}-as-object construction is unsurprisingly and highly significantly the predominant argument realisation pattern for the base *membeli*.
 
+## Intransitive *membeli* in subordinate clause
+
+### Frequency of *membeli* in main vs. subordinate clause
+
 The code below shows the count for the distribution of the intransitive *membeli* in main vs subordinate clauses (question raised by Reviewer A).
 
 ```{r membeli-clause-type}
@@ -220,6 +227,8 @@ intransitive_membeli_clause_type
 
 The intransitive *membeli* is significantly more frequent in the subordinate clause (N=`r filter(intransitive_membeli_clause_type, clause_type=="subordinate")[["n"]]`) than in the main clause (N=`r filter(intransitive_membeli_clause_type, clause_type=="main")[["n"]]`) (*p*~Binomial~ \< 0.05).
 
+### Frequency of the subordinate clause types of the intransitive *membeli*
+
 The following code presents count of *membeli*'s subordinate clause types.
 
 ```{r intransitive-membeli-subordinate-clause-count}
@@ -228,6 +237,8 @@ df_membeli |>
   count(subordinate_clause_type)
 ```
 
+### The intransitive *membeli* in main clause of compound sentence
+
 The following code extract the occurrences of intransitive *membeli* in main clauses of compound sentences.
 
 ```{r intransitive-membeli-in-main-clause}
@@ -235,6 +246,8 @@ df_membeli |>
   filter(syntactic_transitivity=='intransitive', clause_type == "main") |> 
   pull(node_sentences)
 ```
+
+### The intransitive *membeli* in subordinate clause without antecedent in the matrix clause
 
 ```{r intransitive-membeli-in-subordinate-clause}
 df_membeli |> 
@@ -832,4 +845,3 @@ cxn_type_dibelikan1 %>%
            x = 2.5, y = 0.62,
            label = cxn_type_dibelikan_binom_pairwise[1,][["p.adj.signif"]])
 ```
-
