@@ -220,6 +220,30 @@ intransitive_membeli_clause_type
 
 The intransitive *membeli* is significantly more frequent in the subordinate clause (N=`r filter(intransitive_membeli_clause_type, clause_type=="subordinate")[["n"]]`) than in the main clause (N=`r filter(intransitive_membeli_clause_type, clause_type=="main")[["n"]]`) (*p*~Binomial~ < 0.05).
 
+The following code presents count of *membeli*'s subordinate clause types.
+
+```{r intransitive-membeli-subordinate-clause-count}
+df_membeli |> 
+  filter(syntactic_transitivity=='intransitive', clause_type == "subordinate") |> 
+  count(subordinate_clause_type)
+```
+
+The following code extract the occurrences of intransitive *membeli* in main clauses of compound sentences.
+
+```{r intransitive-membeli-in-main-clause}
+df_membeli |> 
+  filter(syntactic_transitivity=='intransitive', clause_type == "main") |> 
+  pull(node_sentences)
+```
+
+```{r intransitive-membeli-in-subordinate-clause}
+df_membeli |> 
+  filter(syntactic_transitivity=='intransitive', clause_type == "subordinate") |> 
+  pull(node_sentences)
+```
+
+Sentences [5], [8] and [9] include reference of the omitted object in the previous, higher clauses (*ginjal* 'kidney' for [5], *minyak tanah* 'kerosine' for [8], and *bahan baku impor* 'import basic materials' in [9]).
+
 # Analyses for *dibeli*
 
 ```{r dibeli-cxntype-synvalence-count}
