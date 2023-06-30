@@ -33,6 +33,7 @@ format:
     code-block-bg: "#F8F9F9"
     citations-hover: true
     footnotes-hover: true
+    number-sections: true
     code-tools: 
       source: true
       caption: "Source code"
