@@ -6,6 +6,7 @@ author:
       family: Rajeg
       literal: Gede Primahadi Wijaya Rajeg
     orcid: 0000-0002-2047-8621
+    url: https://www.ling-phil.ox.ac.uk/people/gede-rajeg
     corresponding: true
     affiliations:
       - number: 1
@@ -17,6 +18,7 @@ author:
       family: Arka
       literal: I Wayan Arka
     orcid: 0000-0002-2819-6186
+    url: https://researchprofiles.anu.edu.au/en/persons/wayan-arka
     corresponding: false
     affiliations:
       - number: 1
