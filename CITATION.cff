@@ -1,0 +1,49 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  R Notebook and Dataset for "Usage-based perspective on
+  argument realisation: A corpus study of Indonesian BUY
+  verbs in applicative construction with -kan"
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Gede Primahadi Wijaya
+    family-names: Rajeg
+    affiliation: >-
+      Universitas Udayana, Indonesia & University of Oxford,
+      UK
+    orcid: 'https://orcid.org/0000-0002-2047-8621'
+  - given-names: I Wayan
+    family-names: Arka
+    affiliation: >-
+      Australian National University & Universitas Udayana,
+      Indonesia
+    orcid: 'https://orcid.org/0000-0002-2819-6186'
+identifiers:
+  - type: url
+    value: 'https://github.com/gederajeg/applicative-buy'
+    description: GitHub repository
+  - type: doi
+    value: 10.6084/m9.figshare.23612631
+    description: Figshare DOI
+repository-code: 'https://github.com/gederajeg/applicative-buy'
+url: 'https://gederajeg.github.io/applicative-buy/'
+keywords:
+  - applicative
+  - Indonesian
+  - Construction Grammar
+  - Indonesian BUY verbs
+  - corpus linguistics
+  - quantitative corpus linguistics
+  - usage-based construction grammar
+  - morphosyntax
+  - applicative construction
+  - morphology
+  - syntax
+license: CC-BY-SA-4.0
+version: 1.0.0
+date-released: '2023-06-30'
