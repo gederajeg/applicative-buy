@@ -46,6 +46,7 @@ appendix-cite-as: display
 citation:
   type: software
   url: https://gederajeg.github.io/applicative-buy/
+  doi: 10.6084/m9.figshare.23612631
 bibliography: "zotero.bib"
 csl: "unified-style-sheet-for-linguistics.csl"
 ---
@@ -54,7 +55,11 @@ csl: "unified-style-sheet-for-linguistics.csl"
 
 
 
-The paper associated with this R Notebook has been accepted for publication in the forthcoming [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic studies of languages in and around Indonesia*) special volume on Applicative Construction.
+The [paper](https://tufs.repo.nii.ac.jp/records/2000019) [@rajeg_usage-based_2023] associated with this R ([Quarto](https://quarto.org/)) Notebook has been published in [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic studies of languages in and around Indonesia*) special volume on “Applicatives in Austronesian Languages” (co-edited by Jocelyn [Aznar]{.smallcaps}, Christian [Döhler]{.smallcaps}, and Jozina [Vander Klok]{.smallcaps}).
+
+*How to cite the paper*:
+
+> [Rajeg]{.smallcaps}, Gede Primahadi Wijaya and I Wayan [Arka]{.smallcaps}, 2023. ‘Usage-based perspective on argument realisation: A corpus study of Indonesian BUY verbs in applicative construction with -*kan*’. In Jocelyn [Aznar]{.smallcaps}, Christian [Döhler]{.smallcaps}, Jonzina [Vander Klok]{.smallcaps}, eds. *Applicatives in Austronesian Languages*. NUSA 74: 83-114. [https://tufs.repo.nii.ac.jp/records/2000019](https://tufs.repo.nii.ac.jp/records/2000019)
 
 # Preparation
 
