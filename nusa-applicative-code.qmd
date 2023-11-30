@@ -55,7 +55,7 @@ csl: "unified-style-sheet-for-linguistics.csl"
 
 
 
-The [paper](https://tufs.repo.nii.ac.jp/records/2000019) [@rajeg_usage-based_2023] associated with this R ([Quarto](https://quarto.org/)) Notebook has been published in [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic studies of languages in and around Indonesia*) special volume on “Applicatives in Austronesian Languages” (co-edited by Jocelyn [Aznar]{.smallcaps}, Christian [Döhler]{.smallcaps}, and Jozina [Vander Klok]{.smallcaps}).
+The [paper](https://tufs.repo.nii.ac.jp/records/2000019) [@rajeg_usage-based_2023] associated with this R ([Quarto](https://quarto.org/)) Notebook has been published in [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic studies of languages in and around Indonesia*) special volume on “Applicatives in Austronesian Languages” [@aznar_applicatives_2023].
 
 *How to cite the paper*:
 

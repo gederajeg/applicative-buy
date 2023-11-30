@@ -18,13 +18,29 @@ Rajeg](https://www.ling-phil.ox.ac.uk/people/gede-rajeg)
 Commons Attribution-ShareAlike 4.0 International License</a>
 <!-- badges: end -->
 
-## Description
+## Overview
 
-The is a repository containing the dataset and R codes for our paper
-that has been accepted for publication in the forthcoming
+The is a repository containing the dataset and R codes for our
+[paper](https://tufs.repo.nii.ac.jp/records/2000019) ([Rajeg and Arka
+2023](#ref-rajeg_usage-based_2023)) that has been published in
 [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic
-studies of languages in and around Indonesia*) special volume on
-Applicative Construction.
+studies of languages in and around Indonesia*) special volume (74) on
+“Applicatives in Austronesian Languages” ([Aznar, Döhler, and Vander
+Klok 2023](#ref-aznar_applicatives_2023)).
+
+*How to cite the paper*
+
+> <span class="smallcaps">Rajeg</span>, Gede Primahadi Wijaya and I
+> Wayan <span class="smallcaps">Arka</span>, 2023. ‘Usage-based
+> perspective on argument realisation: A corpus study of Indonesian BUY
+> verbs in applicative construction with -*kan*’. In Jocelyn
+> <span class="smallcaps">Aznar</span>, Christian
+> <span class="smallcaps">Döhler</span>, Jonzina
+> <span class="smallcaps">Vander Klok</span>, eds. *Applicatives in
+> Austronesian Languages*. NUSA 74: 83-114.
+> <https://tufs.repo.nii.ac.jp/records/2000019>
+
+## Description of the repository
 
 - The .qmd file contains the R codes used to produce the quantitative
   analyses in the paper, including the statistical figures. This .qmd
@@ -38,3 +54,28 @@ Applicative Construction.
 
 - The statistical figures can also be accessed individually
   [here](https://github.com/gederajeg/applicative-buy/tree/main/nusa-applicative-code_files/figure-html).
+
+## Reference
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-aznar_applicatives_2023" class="csl-entry">
+
+Aznar, Jocelyn, Christian Döhler, and Jozina Vander Klok, eds. 2023.
+*Applicatives in Austronesian Languages*. Vol. 74. NUSA: Linguistic
+Studies of Languages in and Around Indonesia.
+
+</div>
+
+<div id="ref-rajeg_usage-based_2023" class="csl-entry">
+
+Rajeg, Gede Primahadi Wijaya, and I Wayan Arka. 2023. “Usage-Based
+Perspective on Argument Realisation: A Corpus Study of Indonesian BUY
+Verbs in Applicative Construction with -*Kan*.” In *NUSA (Special Issue
+on "Applicatives in Austronesian Languages")*, edited by Jocelyn Aznar,
+Christian Döhler, and Jozina Vander Klok, 74:83–114.
+<https://tufs.repo.nii.ac.jp/records/2000019>.
+
+</div>
+
+</div>
