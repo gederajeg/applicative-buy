@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-The is a repository containing the dataset and R codes for our [paper](https://tufs.repo.nii.ac.jp/records/2000019) [@rajeg_usage-based_2023] that has been published in [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic studies of languages in and around Indonesia*) special volume (74) on “Applicatives in Austronesian Languages” [@aznar_applicatives_2023].
+This is a repository containing the dataset and R codes for our [paper](https://tufs.repo.nii.ac.jp/records/2000019) [@rajeg_usage-based_2023] that has been published in [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic studies of languages in and around Indonesia*) special volume (74) on “Applicatives in Austronesian Languages” [@aznar_applicatives_2023].
 
 *How to cite the paper*
 
@@ -35,4 +35,4 @@ The is a repository containing the dataset and R codes for our [paper](https://t
 
 - The statistical figures can also be accessed individually [here](https://github.com/gederajeg/applicative-buy/tree/main/nusa-applicative-code_files/figure-html).
 
-## Reference
+## References

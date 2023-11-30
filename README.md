@@ -20,7 +20,7 @@ Commons Attribution-ShareAlike 4.0 International License</a>
 
 ## Overview
 
-The is a repository containing the dataset and R codes for our
+This is a repository containing the dataset and R codes for our
 [paper](https://tufs.repo.nii.ac.jp/records/2000019) ([Rajeg and Arka
 2023](#ref-rajeg_usage-based_2023)) that has been published in
 [NUSA](http://www.aa.tufs.ac.jp/en/publications/nusa) (*Linguistic
@@ -55,7 +55,7 @@ Klok 2023](#ref-aznar_applicatives_2023)).
 - The statistical figures can also be accessed individually
   [here](https://github.com/gederajeg/applicative-buy/tree/main/nusa-applicative-code_files/figure-html).
 
-## Reference
+## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
